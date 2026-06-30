@@ -65,16 +65,23 @@ python hunt_agent.py --days 7      # 直近7日
 そのまま動きます。`hunt_agent.py` の `SYSTEM`（システムプロンプト）に書いた
 フィールド名や手順も、自分のデータに合わせて調整してください。
 
-## ファイル構成
+## ファイル構成（記事の章との対応）
 
 ```
-hunt_agent.py     エージェント本体（2つの道具 + tool_runner + 保存）
-msearch.py        データ源への接続例（OpenSearch over SSH）。差し替え可
-examples/         記事の各ステップの最小コード（学習用）
-  01_hello.py        SDK で1往復
-  02_manual_loop.py  道具呼び出しのループを手作業で1周
-  03_tool_runner.py  @beta_tool + tool_runner で自動化
+hunt_agent.py     5〜8章：エージェント本体（2つの道具 + tool_runner + 保存）の完成版
+msearch.py        5章：データ源への接続例（OpenSearch over SSH）。差し替え可
+examples/         2〜4章：各ステップの最小コード（学習用・天気の偽ツールで誰でも動く）
+  01_hello.py        2章：SDK で1往復
+  02_manual_loop.py  3章：道具呼び出しを手作業で1周
+  03_tool_runner.py  4章：@beta_tool + tool_runner で自動化
 ```
+
+| 記事の章 | 内容 | ファイル |
+|---|---|---|
+| 2章 | hello world（SDKで1往復） | `examples/01_hello.py` |
+| 3章 | 道具呼び出しを手作業で1周 | `examples/02_manual_loop.py` |
+| 4章 | `@beta_tool` + `tool_runner` で自動化 | `examples/03_tool_runner.py` |
+| 5〜8章 | 実データ接続・自律・記録・実用化（完成版） | `hunt_agent.py`（接続は `msearch.py`） |
 
 ## 注意
 
