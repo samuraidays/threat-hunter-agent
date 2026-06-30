@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+# 実行で生成される成果物（実データを含むため公開しない）
+report_*.md
+findings_*.json
