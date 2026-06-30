@@ -23,7 +23,7 @@ messages = [{"role": "user", "content": "東京の天気は？"}]
 
 resp = client.messages.create(model="claude-haiku-4-5", max_tokens=300, tools=tools, messages=messages)
 
-# ① モデルの返答を「丸ごと」履歴に積む（text も tool_use も全部）
+# ① モデルの返答を「そのまま」履歴に積む（text も tool_use も全部）
 messages.append({"role": "assistant", "content": resp.content})
 
 # ② tool_use ブロックを取り出して、自分の関数を実行

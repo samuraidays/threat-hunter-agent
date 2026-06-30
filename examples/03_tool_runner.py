@@ -24,4 +24,4 @@ for message in runner:                       # 1ターンごとに message が�
         if block.type == "text":
             print("[Claude]", block.text)
         elif block.type == "tool_use":
-            print("[道具呼び出し]", block.name, block.input)
+            print("[道具]", block.name, block.input)
